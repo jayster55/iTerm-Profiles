@@ -8,7 +8,7 @@ export ZSH="/Users/jaredgee/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -109,18 +109,31 @@ alias addall="add ."
 alias rmlocal="rm -r --cached ."
 alias gstat="git status"
 
+#================ ALIAS - DOCKER ====================
+#alias killdocker="docker kill $(docker ps -q) && docker rm $(docker ps -a -q)"
 
+#================ ALIAS - JAVA ======================
+alias j11="export JAVA_HOME=`/usr/libexec/java_home -v 11`; java -version"
+alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`; java -version"
 
-
+#=============== ALIAS - GUILDONE COMMANDS =====================
+alias maky="make clean && make html"
+alias vdocs="open /Users/jaredgee/Projects/EBX/ebx_docs/docs/build/html/index.html"
+alias docme="maky && vdocs"
 
 # Customise the Powerlevel9k prompts
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
+  os_icon
   dir
   vcs
   newline
-  status
+  status  
 )
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
+  command_execution_time
+  docker_machine
+  java_version
+)
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 # Create a custom JavaScript prompt section
 # Load Nerd Fonts with Powerlevel9k theme for Zsh
