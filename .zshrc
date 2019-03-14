@@ -120,7 +120,7 @@ alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`; java -version"
 alias maky="make clean && make html"
 alias vdocs="open /Users/jaredgee/Projects/EBX/ebx_docs/docs/build/html/index.html"
 alias docme="maky && vdocs"
-
+alias updateProfiles="cp ~/.zshrc ~/Projects/ZSHRC-Profile/ && cp ~/.bashrc ~/Projects/ZSHRC-Profile/ && cp ~/.bash_profile ~/Projects/ZSHRC-Profile/ && cp ~/.vimrc ~/Projects/ZSHRC-Profile/"
 # Customise the Powerlevel9k prompts
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
   os_icon
