@@ -92,8 +92,8 @@ source $ZSH/oh-my-zsh.sh
 
 #================= ALIAS - ZSH =====================
 # zsh navigation
-alias editzsh="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
+alias editzsh="nvim ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias sourcezsh="source ~/.zshrc"
 
 
@@ -103,11 +103,14 @@ alias f="cd"
 alias empdash="cd Projects/employee_dashboard/"
 alias docs="cd Projects/EBX/ebx_docs/docs/"
 alias docssource="cd Projects/EBX/ebx_docs/docs/source/_static/"
+alias nv="nvim"
 
 #================= ALIAS - VERSION CONTROL =====================
 alias addall="add ."
 alias rmlocal="rm -r --cached ."
 alias gstat="git status"
+alias cup="hg pull && hg up --clean"
+alias undo="forget 'set:added()'"
 
 #================ ALIAS - DOCKER ====================
 #alias killdocker="docker kill $(docker ps -q) && docker rm $(docker ps -a -q)"
@@ -120,14 +123,16 @@ alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`; java -version"
 alias maky="make clean && make html"
 alias vdocs="open /Users/jaredgee/Projects/EBX/ebx_docs/docs/build/html/index.html"
 alias docme="maky && vdocs"
-alias updateProfiles="cp ~/.zshrc ~/Projects/ZSHRC-Profile/ && cp ~/.bashrc ~/Projects/ZSHRC-Profile/ && cp ~/.bash_profile ~/Projects/ZSHRC-Profile/ && cp ~/.vimrc ~/Projects/ZSHRC-Profile/"
+alias updateProfiles="cp ~/.zshrc ~/Projects/ZSHRC-Profile/ && cp ~/.bashrc ~/Projects/ZSHRC-Profile/ && cp ~/.bash_profile ~/Projects/ZSHRC-Profile/ && cp ~/.vimrc ~/Projects/ZSHRC-Profile/ && cp ~/.config/nvim/init.vim ~/Projects/ZSHRC-Profile/"
+alias clearServices="rm -rf ~/.ivy2 && rm -rf ~/Library/Caches/Coursier/*"
+export SBT_OPTS=-Xss2m
 # Customise the Powerlevel9k prompts
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
   os_icon
   dir
   vcs
   newline
-  status  
+  status
 )
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
   command_execution_time
@@ -166,3 +171,5 @@ function title_text {
     echo -ne "\033]0;"$*"\007"
 }
 title_text freeCodeCamp
+
+j8
