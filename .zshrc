@@ -103,7 +103,10 @@ alias f="cd"
 alias empdash="cd Projects/employee_dashboard/"
 alias docs="cd Projects/EBX/ebx_docs/docs/"
 alias docssource="cd Projects/EBX/ebx_docs/docs/source/_static/"
-alias nv="nvim"
+alias n="nvim"
+alias p="pushd"
+alias o="popd"
+alias stack="dirs -p"
 
 #================= ALIAS - VERSION CONTROL =====================
 alias addall="add ."
@@ -173,3 +176,6 @@ function title_text {
 title_text freeCodeCamp
 
 j8
+
+export SBT_OPTS=-Xss2m
+
